@@ -1,0 +1,140 @@
+* {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+   }
+   
+   :root {
+       --white : #fff;
+       --dark-gray : #ababab;
+       --light-gray : #808080;
+       --dark-bg : #222222;
+       --light-bg : #333333;
+       --box-shadow : 0 0.5rem 1rem rgba(0,0,0,0.1)
+   
+   }
+   
+   html{
+       font-size : 62.5%;
+       overflow-x : hidden;
+       scroll-behavior: smooth;
+       scroll-padding-top: 6rem;
+   
+   }
+   
+   html::-webkit-scrollbar{
+       width:1rem
+   
+   }
+   
+   html::-webkit-scrollbar-track{
+   
+   background: var(--light-bg);
+   }
+   
+   body{
+       background-color: var(--dark-bg);
+   
+   }
+   
+   section{
+   padding : 5rem 9%;
+   }
+   
+   .heading{
+       color : var(--dark-bg);
+       font-size: 3rem;
+       font-weight: 200;
+       text-align: center;
+       padding-bottom: 4rem;
+   
+   }
+   
+   .heading span{
+       font-weight: 700;
+   }
+   
+   .home{
+       height: 100vh;
+       background:url(pro.png);
+       filter:grayscale(10%);
+       background-size: cover;
+       background-position: center;
+       background-attachment: fixed;
+   
+       display: flex;
+       align-items : center;
+       justify-content: center;
+       flex-direction: column;
+       text-align: center;
+   }
+   .home .hero-text{
+       font-size: 7rem;
+       color: var(--white);
+       font-weight : 200;
+       line-height : 1,2;
+   
+   }
+   
+   .home .hero-text span{
+       font-weight: 800;
+   }
+   
+   .home p{
+       color: var(--dark-gray);
+       font-size: 1.5rem;
+       margin-top: 2rem;
+       text-transform: uppercase;
+       letter-spacing: 0.3rem;
+   
+   }
+   
+   .header{
+       position : fixed;
+       top:0;
+       left: 0;
+       right: 0;
+       padding: 5rem 9%;
+       z-index : 100;
+   }
+   .header.active{
+       background-color: var(--white);
+       padding: 3rem 9%;
+   
+   }
+   
+   header.active .navbar a {
+   color:var(--yellow)
+   }
+   
+   header.active .navbar a:hover{
+       color:var(--dark-bg)
+       }
+       
+       .header navbar{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+   
+       .header .navbar a{
+           font-size: 1.5rem;
+           color: var(--white);
+           padding: 0 2rem;
+           letter-spacing: 0.3rem;
+           font-weight: 300;
+           text-transform: uppercase;
+       }
+   
+       .header .menu{
+           font-size: 2.5rem;
+           color: var(--yellow);
+           cursor: pointer;
+           text-align: left;
+           display: none;
+       }
