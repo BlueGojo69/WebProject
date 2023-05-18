@@ -1,0 +1,76 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding:  0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+:root {
+    --white : #fff;
+    --dark-gray : #ababab;
+    --light-gray : #808080;
+    --dark-bg : #222222;
+    --light-bg : #333333;
+    --yellow : #bac964;
+    --bluegrad : #4960bb;
+    --green-white : #a2c7aa;
+    --box-shadow : 0 0.5rem 1rem rgba(0,0,0,0.1)
+}
+
+body
+    background: var(--white);
+
+.header{
+    color: var(--white);
+    font-size : 1rem;
+    font-weight: 100;
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-right: 10px;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 9%;
+    z-index: 100;
+}
+
+.header.active{
+    background-color: var(--white);
+    padding: 1rem 9%;
+}
+
+.header.active .navbar a {
+    color: var(--dark-bg);
+}
+
+.header.active .navbar a:hover{
+    color: var(--yellow);
+}
+
+.header.active .menu{
+    color: var(--dark-bg);
+}
+
+.header .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .navbar a{
+    font-size: 4.5rem;
+    color: var(--white);
+    padding: 4.5rem;
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
