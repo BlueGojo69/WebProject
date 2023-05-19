@@ -10,8 +10,8 @@
    }
    
    :root {
-       --white : #fff;
-       --dark-gray : #ababab;
+       --white : #f65454;
+       --dark-gray : #f14c4c;
        --light-gray : #808080;
        --dark-bg : #222222;
        --light-bg : #333333;
@@ -124,7 +124,7 @@
    
        .header .navbar a{
            font-size: 1.5rem;
-           color: var(--white);
+           color: var(--black);
            padding: 0 2rem;
            letter-spacing: 0.3rem;
            font-weight: 300;
