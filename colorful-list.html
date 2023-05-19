@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorful To-Do List</title>
+  <style>
+    /* Different styling from the previous example */
+    body {
+      font-family: 'Allan';
+      font-size: 18px;
+      background-image: url(one1.jpg);
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .todo-container {
+      margin: 20px auto;
+      max-width: 400px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+
+    .todo-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-bottom: 2px solid #aaa;
+      outline: none;
+      transition: border-bottom-color 0.3s;
+    }
+
+    .todo-input:focus {
+      border-bottom-color: #333;
+    }
+
+    .todo-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      color: #555;
+    }
+
+    .todo-item:last-child {
+      border-bottom: none;
+    }
+
+    .todo-item .delete-btn {
+      color: #f44336;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>(Colorful) To-Do List</h1>
+  <h2>Enter the tasks you want to do for today</h2>
+  <div class="todo-container">
+    <input id="taskInput" class="todo-input" type="text" placeholder="Enter a task">
+    <ul id="todoList" class="todo-list"></ul>
+  </div>
+
+  <script>
+    const taskInput = document.getElementById('taskInput');
+    const todoList = document.getElementById('todoList');
+
+    // Function to add a new task to the list
+    function addTask() {
+      const task = taskInput.value.trim();
+      if (task !== '') {
+        const listItem = document.createElement('li');
+        listItem.textContent = task;
+        listItem.classList.add('todo-item');
+        listItem.addEventListener('click', () => {
+          listItem.classList.toggle('completed');
+        });
+        
+        const deleteButton = document.createElement('span');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('delete-btn');
+        deleteButton.addEventListener('click', (event) => {
+          event.stopPropagation();
+          listItem.remove();
+        });
+        
+        listItem.appendChild(deleteButton);
+        todoList.appendChild(listItem);
+        taskInput.value = '';
+      }
+    }
+
+    // Event listener for adding a new task when pressing Enter key
+    taskInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        addTask();
+      }
+    });
+  </script>
+</body>
+</html>
