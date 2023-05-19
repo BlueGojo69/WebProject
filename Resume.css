@@ -51,11 +51,13 @@ body {
 }
 
 #Resume1 ul {
+    color: #beeb57;
     margin-left: 20px;
     margin-bottom: 20px;
 }
 
 #Resume1 ul li {
+    color: #beeb57;
     margin-bottom: 10px;
     list-style-type: none;
 }
