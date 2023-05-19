@@ -1,18 +1,14 @@
-document.onscroll = () =>{
-    if(window.scrollY > 0){
-        document.querySelector('.header').classList.add('active');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
 
-    else {
-        document.querySelector('.header').classList.remove('active');
+  function updateHeaderActiveClass() {
+    if (window.scrollY > 0) {
+      header.classList.add('active');
+    } else {
+      header.classList.remove('active');
     }
-};
-document.onload = () =>{
-    if(window.scrollY > 0){
-        document.querySelector('.header').classList.add('active');
-    }
+  }
 
-    else {
-        document.querySelector('.header').classList.remove('active');
-    }
-}; 
+  document.addEventListener('scroll', updateHeaderActiveClass);
+  updateHeaderActiveClass();
+});
