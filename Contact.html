@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+</head>
+
+<body>
+  <header class="header">
+    <a><i class="menu">Menu</i></a>
+    <nav class="navbar">
+      <a href="Karthikeya.html">Home</a> 
+      <a href="Resume1.html">Resume</a> 
+      <a href="About me.html">About Me</a>
+      <a href="Contact.html">Contact</a> 
+      <a href="Time.html">Time</a>
+      <a href="workshop.htm">To-Do List</a>
+    </nav>
+  </header>
+
+  <h1>Contact Me</h1>
+  <form id="contact-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Short Note on my Website :D </label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  
+</body>
+</html>
+
+  <style>
+    body {
+  font-family: "inter";
+  font-size: 18px;
+  background-image: url("blue.jpg");
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+  color: #ed5980;
+  text-shadow: 2px 2px #ecc2d1;
+
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: #ed5980;
+  text-shadow: 2px 2px #ffffff;
+  
+
+}
+
+.menu {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ed5980;
+  padding: 5px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #ed5980;
+  background-color: #f1f1f1;
+  width: 150px;
+  margin: 5px;
+  display: inline-block;
+  
+}
+
+.navbar {
+  display: none;
+  background-image: url("blue.jpg");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-top: 60px;
+  
+
+}
+
+.navbar a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #ed5980;
+  background-color: #f1f1f1;
+  width: 150px;
+  margin: 5px;
+
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+
+
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  resize: vertical;
+
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: rgb(221, 204, 47);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+
+
+}
+
+  </style>
+
+<script>
+
+ document.querySelector(".menu").addEventListener("click", function() {
+  var navbar = document.querySelector(".navbar");
+  if (navbar.style.display === "none") {
+    navbar.style.display = "block";
+  } else {
+    navbar.style.display = "none";
+  }
+});
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form from submitting
+
+  // To Get form values
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var message = document.getElementById("message").value;
+  var form = document.getElementById("contact-form");
+  // form
+  if (name.length < 2 || email.length < 2 || phone.length < 2 || message.length < 2) {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  
+
+</script>
+
+</html>
