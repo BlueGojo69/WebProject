@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Example Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .datetime {
+        font-family: 'Open Sans';font-size: 15px;
+      font-weight: 500;
+    }
+
+    body {
+  background: #d1cfcf;
+  background-image: url("ocean.jpg");
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2e2e2e;
+  }
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+    }
+  .header {
+    background: #fff;
+    border-bottom: 1px solid #d1cfcf;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .header .logo {
+    width: 150px;
+    height: 35px;
+    background: url(https://www.freepngimg.com/thumb/logo/2-logo-png-transparent-background-png.png) no-repeat;
+    background-size: contain;
+    }
+        
+
+.datetime {
+  font-size: 18px;
+  padding: 24px;
+  color: #ffffff;
+  background: #343434;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border-right: 10px #064273 solid;
+  width: 400px;
+  font-weight: 500;
+  font-family: "Open Sans";
+}
+
+.time {
+  font-size: 3em;
+  color: #1da2d8;
+}
+
+.date {
+  margin-top: 12
+  color: #7fcdff
+
+}
+  </style>
+</head>
+<body>
+  <div class="datetime">
+    <div class="time"></div>
+    <div class="date"></div>
+  </div>
+
+  <script>
+    const d = new Date();
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const weekday = weekdays[d.getDay()];
+    const date = d.getDate();
+    const month = months[d.getMonth()];
+    const year = d.getFullYear();
+    const hour = d.getHours();
+    const min = d.getMinutes();
+    const sec = d.getSeconds();
+    const ampm = hour >= 12 ? 'pm' : 'am';
+    const timeElement = document.querySelector(".time");
+const dateElement = document.querySelector(".date");
+
+/**
+ * @param {Date} date
+ */
+function formatTime(date) {
+  const hours12 = date.getHours() % 12 || 12;
+  const minutes = date.getMinutes();
+  const isAm = date.getHours() < 12;
+
+  return `${hours12.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")} ${isAm ? "AM" : "PM"}`;
+}
+
+/**
+ * @param {Date} date
+ */
+function formatDate(date) {
+  const DAYS = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  const MONTHS = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  return `${DAYS[date.getDay()]}, ${
+    MONTHS[date.getMonth()]
+  } ${date.getDate()} ${date.getFullYear()}`;
+}
+
+setInterval(() => {
+  const now = new Date();
+
+  timeElement.textContent = formatTime(now);
+  dateElement.textContent = formatDate(now);
+}, 200);
+
+
+  </script>
+  
+</body>
+</html>
