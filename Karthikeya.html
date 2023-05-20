@@ -14,7 +14,7 @@
         <nav class = "navbar">
             <a href = "Karthikeya.html">Home</a> 
             <a href = "Resume1.html">Resume</a> 
-            <a href = "About me.html">About Me</a>
+            <a id="aboutMeLink" href = "#">About Me</a>
             <a href = "Contact.html">Contact</a> 
               <a href = "Time.html">Time</a>
             <a href = "workshop.htm">To-Do List</a>
@@ -29,6 +29,15 @@
 
     <!--local js file-->
 -<script src="samplejs.js"></script>
+      
+      <script>
+
+var aboutMeLink = document.getElementById("aboutMeLink");
+aboutMeLink.addEventListener("click", function() {
+  window.location.href = "https://www.instagram.com/_1karthikeya1_/";
+});
+
+</script>
 <!--Home section-->
      
 
